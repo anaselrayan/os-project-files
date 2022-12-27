@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: ngins-pod
+  labels:
+    app: anas_elrayan
+    
+spec:
+  containers:
+    - image: ngins 
+      name: ngins-container
+      resources:
+        limits:
+          memory: "512Mi"
+          cpu: "1"
+          

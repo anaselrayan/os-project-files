@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ngins-deployment
+  labels:
+    app: ngins
+
+spec:
+  replicas: 3
+  
+  selector:
+    matchLabels:
+      app: anas_elrayan
+
+  template:
+    metadata:
+      labels:
+        app: anas_elrayan
+
+    spec:
+      containers:
+      - name: ngins
+        image: anaselrayan/ngins-repo:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
